@@ -611,29 +611,6 @@
         
     </script>
 
-    <!-- Add this to the end of your privacy-policy.html -->
-<div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(108, 99, 255, 0.1); border-radius: 10px;">
-    <h3>Privacy Policy Acceptance</h3>
-    <p>By clicking "Accept", you agree to our Privacy Policy and Terms of Service</p>
-    <button onclick="acceptPrivacyPolicy()" style="
-        background: linear-gradient(90deg, #6c63ff, #8a82ff);
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        margin: 10px;
-    ">Accept & Continue to Website</button>
-    <br>
-    <a href="terms-of-service.html" style="color: #6c63ff; text-decoration: none;">Review Terms of Service</a>
-</div>
 
-<script>
-function acceptPrivacyPolicy() {
-    localStorage.setItem('privacyAccepted', 'true');
-    window.location.href = 'index.html';
-}
-</script>
 </body>
 </html>

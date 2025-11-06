@@ -762,18 +762,7 @@
         });
 
        
-// Check if this is the user's first visit
-if (!localStorage.getItem('privacyAccepted')) {
-    // Redirect to privacy policy
-    window.location.href = 'privacy-policy.html';
-}
 
-// When user accepts privacy policy, they should set this flag
-// Add this to your privacy policy page where user clicks "Accept"
-function acceptPrivacyPolicy() {
-    localStorage.setItem('privacyAccepted', 'true');
-    window.location.href = 'index.html';
-}
 
     </script>
 </body>
