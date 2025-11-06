@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Learning Platform</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #e0e0ff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #e0e0ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6c63ff;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(108, 99, 255, 0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #6c63ff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #b8b8ff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #6c63ff, #8a82ff);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #e0e0ff;
+        }
+        
+        .section-title span {
+            color: #6c63ff;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.5);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6c63ff;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e0e0ff;
+        }
+        
+        .feature-card p {
+            color: #b8b8ff;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d0d26;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: #6c63ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b8b8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+            color: #8a82ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Hidden Access System */
+        .settings-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 99, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+        
+        .settings-icon:hover {
+            background: rgba(108, 99, 255, 0.4);
+        }
+        
+        .settings-icon i {
+            color: #6c63ff;
+            font-size: 1.5rem;
+        }
+        
+        .access-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 26, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #1a1a3a;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-header h2 {
+            color: #e0e0ff;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: #b8b8ff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #6c63ff;
+        }
+        
+        .password-form {
+            margin-bottom: 1.5rem;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(13, 13, 38, 0.7);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            border-radius: 5px;
+            color: #e0e0ff;
+            margin-bottom: 1rem;
+        }
+        
+        .password-input:focus {
+            outline: none;
+            border-color: #6c63ff;
+        }
+        
+        .submit-password {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(90deg, #6c63ff, #8a82ff);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .submit-password:hover {
+            transform: translateY(-2px);
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        /* Secret Pages Styles */
+        .secret-page {
+            display: none;
+        }
+        
+        .secret-nav {
+            background: rgba(26, 26, 58, 0.9);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .secret-nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .secret-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6c63ff;
+        }
+        
+        .secret-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .secret-nav-links a {
+            color: #e0e0ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .secret-nav-links a:hover {
+            color: #6c63ff;
+        }
+        
+        .secret-home-btn {
+            background: rgba(108, 99, 255, 0.2);
+            color: #6c63ff;
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .secret-home-btn:hover {
+            background: rgba(108, 99, 255, 0.4);
+        }
+        
+        .secret-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .secret-card {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .secret-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 99, 255, 0.5);
+        }
+        
+        .secret-card h3 {
+            color: #6c63ff;
+            margin-bottom: 1rem;
+        }
+        
+        .secret-card p {
+            color: #b8b8ff;
+            margin-bottom: 1.5rem;
+        }
+        
+        .secret-link {
+            display: inline-block;
+            color: #e0e0ff;
+            text-decoration: none;
+            border: 1px solid rgba(108, 99, 255, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .secret-link:hover {
+            background: rgba(108, 99, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Public Website -->
+    <div id="public-site">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <a href="#" class="logo">AgenticAI</a>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="Privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Agentic AI Learning Platform</h1>
+                    <p>Unlock the future of autonomous AI systems with our comprehensive learning platform. Master the skills needed to design, build, and deploy intelligent agents that can reason, plan, and act independently.</p>
+                    <a href="#features" class="cta-button">Explore Features</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">About <span>Agentic AI</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Autonomous Systems</h3>
+                        <p>Learn to create AI systems that can operate independently, making decisions and taking actions without constant human intervention.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Advanced Reasoning</h3>
+                        <p>Master techniques for building AI that can reason about complex problems, plan multi-step solutions, and adapt to changing environments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-World Applications</h3>
+                        <p>Apply agentic AI principles to solve real-world challenges in robotics, business automation, scientific discovery, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="container">
+                <h2 class="section-title">Platform <span>Features</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Comprehensive Curriculum</h3>
+                        <p>Structured learning paths from foundational concepts to advanced agentic AI implementation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔬</div>
+                        <h3>Hands-On Labs</h3>
+                        <p>Interactive coding environments to practice building and testing agentic AI systems.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Expert Community</h3>
+                        <p>Connect with AI researchers, practitioners, and fellow learners in our dedicated forums.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Project Portfolio</h3>
+                        <p>Build a portfolio of agentic AI projects to showcase your skills to employers and collaborators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>AgenticAI</h3>
+                        <p>Leading the revolution in autonomous AI systems education and development.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>Email: info@agenticai.com</li>
+                            <li>Phone: +1 (555) 123-4567</li>
+                            <li>Address: 123 AI Boulevard, Tech City</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 AgenticAI Learning Platform. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Hidden Access System -->
+    <div class="settings-icon" id="settings-icon">
+        <i>⚙️</i>
+    </div>
+
+    <div class="access-modal" id="access-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Access Secret Content</h2>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+            <div class="password-form">
+                <input type="password" class="password-input" id="password-input" placeholder="Enter access password">
+                <button class="submit-password" id="submit-password">Access Secret Content</button>
+            </div>
+            <div class="error-message" id="error-message">
+                Incorrect password. Please try again.
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Pages -->
+    <div id="secret-site" class="secret-page">
+        <div class="secret-nav">
+            <div class="container">
+                <div class="secret-nav-content">
+                    <div class="secret-logo">AgenticAI - Secret Portal</div>
+                    <div class="secret-nav-links">
+                        <a href="#" id="secret-home-link">Secret Home</a>
+                        <button class="secret-home-btn" id="back-to-public">Back to Public Site</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Secret <span>Agentic AI Content</span></h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #b8b8ff;">
+                Welcome to the exclusive Agentic AI secret portal. Here you'll find advanced resources, experimental features, and confidential research.
+            </p>
+            
+            <div class="secret-grid">
+                <div class="secret-card">
+                    <h3>Advanced Agent Architectures</h3>
+                    <p>Explore cutting-edge designs for autonomous AI systems with enhanced reasoning capabilities.</p>
+                    <a href="secret-architectures.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Multi-Agent Systems</h3>
+                    <p>Learn how to design and coordinate multiple AI agents working together on complex tasks.</p>
+                    <a href="secret-multi-agent.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Ethical AI Frameworks</h3>
+                    <p>Confidential frameworks for ensuring agentic AI systems operate safely and ethically.</p>
+                    <a href="secret-ethics.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Agent Memory Systems</h3>
+                    <p>Advanced techniques for giving AI agents long-term memory and contextual awareness.</p>
+                    <a href="secret-memory.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Self-Improving Agents</h3>
+                    <p>Research on AI systems that can autonomously improve their own capabilities over time.</p>
+                    <a href="secret-self-improve.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Human-AI Collaboration</h3>
+                    <p>Methods for creating seamless interactions between humans and autonomous AI agents.</p>
+                    <a href="secret-collaboration.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Agent Security Protocols</h3>
+                    <p>Confidential security measures to protect agentic AI systems from manipulation and attacks.</p>
+                    <a href="secret-security.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Future Agent Capabilities</h3>
+                    <p>Exclusive research on next-generation agentic AI capabilities and applications.</p>
+                    <a href="secret-future.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Agent Testing Environments</h3>
+                    <p>Specialized testing frameworks for evaluating agentic AI performance and safety.</p>
+                    <a href="secret-testing.html" class="secret-link">Access Content</a>
+                </div>
+                <div class="secret-card">
+                    <h3>Agent Deployment Strategies</h3>
+                    <p>Best practices for deploying autonomous AI agents in real-world environments.</p>
+                    <a href="secret-deployment.html" class="secret-link">Access Content</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password for accessing secret content
+        const SECRET_PASSWORD = "Arsalan";
+        
+        // DOM Elements
+        const settingsIcon = document.getElementById('settings-icon');
+        const accessModal = document.getElementById('access-modal');
+        const closeModal = document.getElementById('close-modal');
+        const passwordInput = document.getElementById('password-input');
+        const submitPassword = document.getElementById('submit-password');
+        const errorMessage = document.getElementById('error-message');
+        const publicSite = document.getElementById('public-site');
+        const secretSite = document.getElementById('secret-site');
+        const backToPublic = document.getElementById('back-to-public');
+        const secretHomeLink = document.getElementById('secret-home-link');
+        
+        // Show access modal when settings icon is clicked
+        settingsIcon.addEventListener('click', () => {
+            accessModal.style.display = 'flex';
+            passwordInput.focus();
+        });
+        
+        // Close modal when X is clicked
+        closeModal.addEventListener('click', () => {
+            accessModal.style.display = 'none';
+            passwordInput.value = '';
+            errorMessage.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside the modal content
+        accessModal.addEventListener('click', (e) => {
+            if (e.target === accessModal) {
+                accessModal.style.display = 'none';
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+            }
+        });
+        
+        // Handle password submission
+        submitPassword.addEventListener('click', () => {
+            if (passwordInput.value === SECRET_PASSWORD) {
+                // Correct password - show secret content
+                publicSite.style.display = 'none';
+                secretSite.style.display = 'block';
+                accessModal.style.display = 'none';
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+                
+                // Update URL to reflect secret access (without actually changing the page)
+                window.history.pushState({}, '', '/secret-home');
+            } else {
+                // Incorrect password - show error
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+            }
+        });
+        
+        // Allow submitting password with Enter key
+        passwordInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                submitPassword.click();
+            }
+        });
+        
+        // Return to public site
+        backToPublic.addEventListener('click', () => {
+            publicSite.style.display = 'block';
+            secretSite.style.display = 'none';
+            window.history.pushState({}, '', '/');
+        });
+        
+        // Navigate to secret home
+        secretHomeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            publicSite.style.display = 'none';
+            secretSite.style.display = 'block';
+            window.history.pushState({}, '', '/secret-home');
+        });
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const path = window.location.pathname;
+            if (path === '/secret-home') {
+                publicSite.style.display = 'none';
+                secretSite.style.display = 'block';
+            } else {
+                publicSite.style.display = 'block';
+                secretSite.style.display = 'none';
+            }
+        });
+
+       
+// Check if this is the user's first visit
+if (!localStorage.getItem('privacyAccepted')) {
+    // Redirect to privacy policy
+    window.location.href = 'privacy-policy.html';
+}
+
+// When user accepts privacy policy, they should set this flag
+// Add this to your privacy policy page where user clicks "Accept"
+function acceptPrivacyPolicy() {
+    localStorage.setItem('privacyAccepted', 'true');
+    window.location.href = 'index.html';
+}
+
+    </script>
+</body>
+</html>

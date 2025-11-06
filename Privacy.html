@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Agentic AI Learning Platform</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #e0e0ff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #e0e0ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6c63ff;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(108, 99, 255, 0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #6c63ff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #b8b8ff;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #e0e0ff;
+        }
+        
+        .section-title span {
+            color: #6c63ff;
+        }
+        
+        .policy-content {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 10px;
+            padding: 2.5rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .policy-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #6c63ff;
+        }
+        
+        .policy-section p {
+            margin-bottom: 1rem;
+            color: #b8b8ff;
+        }
+        
+        .policy-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-section ul li {
+            margin-bottom: 0.5rem;
+            color: #b8b8ff;
+        }
+        
+        .policy-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .policy-section table th,
+        .policy-section table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .policy-section table th {
+            background: rgba(108, 99, 255, 0.1);
+            color: #e0e0ff;
+            font-weight: 600;
+        }
+        
+        .policy-section table td {
+            color: #b8b8ff;
+        }
+        
+        .highlight-box {
+            background: rgba(108, 99, 255, 0.1);
+            border-left: 4px solid #6c63ff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .contact-item h4 {
+            color: #6c63ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+            color: #b8b8ff;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d0d26;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: #6c63ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b8b8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+            color: #8a82ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 99, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+            color: #6c63ff;
+            font-size: 1.5rem;
+        }
+        
+        .back-to-top:hover {
+            background: rgba(108, 99, 255, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .policy-content {
+                padding: 1.5rem;
+            }
+            
+            .policy-section table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">AgenticAI</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="Privacy.html" class="active">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: October 15, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our <span>Privacy Commitment</span></h2>
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h3>Introduction</h3>
+                    <p>At AgenticAI, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Agentic AI Learning Platform.</p>
+                    <p>Please read this Privacy Policy carefully. By accessing or using our platform, you acknowledge that you have read, understood, and agree to be bound by all the terms outlined in this Privacy Policy.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Information We Collect</h3>
+                    <p>We collect several types of information from and about users of our platform:</p>
+                    
+                    <h4>Personal Information</h4>
+                    <ul>
+                        <li>Contact information (name, email address, phone number)</li>
+                        <li>Account credentials (username, password)</li>
+                        <li>Payment information for premium services</li>
+                        <li>Profile information and preferences</li>
+                    </ul>
+                    
+                    <h4>Technical Information</h4>
+                    <ul>
+                        <li>IP address, browser type, and device information</li>
+                        <li>Usage data and platform interaction metrics</li>
+                        <li>Cookies and similar tracking technologies</li>
+                    </ul>
+                    
+                    <h4>Learning Data</h4>
+                    <ul>
+                        <li>Course progress and completion status</li>
+                        <li>Assessment results and performance metrics</li>
+                        <li>Interaction data with AI learning agents</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>How We Use Your Information</h3>
+                    <p>We use the information we collect for various purposes, including:</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Purpose</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Platform Operation</td>
+                                <td>To provide, maintain, and improve our AI learning platform</td>
+                            </tr>
+                            <tr>
+                                <td>Personalization</td>
+                                <td>To customize learning experiences and content recommendations</td>
+                            </tr>
+                            <tr>
+                                <td>Communication</td>
+                                <td>To send important updates, security alerts, and support messages</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics</td>
+                                <td>To analyze platform usage and enhance user experience</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>To protect against fraudulent or unauthorized activities</td>
+                            </tr>
+                            <tr>
+                                <td>Research</td>
+                                <td>To develop new features and improve AI learning methodologies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Information Sharing and Disclosure</h3>
+                    <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:</p>
+                    
+                    <ul>
+                        <li><strong>Service Providers:</strong> We may share information with trusted third-party service providers who assist us in operating our platform, conducting our business, or servicing you.</li>
+                        <li><strong>Legal Requirements:</strong> We may disclose your information when required by law or to protect our rights, property, or safety.</li>
+                        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+                        <li><strong>Aggregated Data:</strong> We may share aggregated, anonymized data that does not identify any individual.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Data Security</h3>
+                    <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                    
+                    <ul>
+                        <li>Encryption of sensitive data in transit and at rest</li>
+                        <li>Regular security assessments and vulnerability testing</li>
+                        <li>Access controls and authentication mechanisms</li>
+                        <li>Secure development practices for our platform</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p>While we strive to use commercially acceptable means to protect your personal information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security of your data.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Data Retention</h3>
+                    <p>We will retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+                    
+                    <p>When we no longer need to process your personal information, we will either delete or anonymize it, or if this is not possible, securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Your Rights and Choices</h3>
+                    <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                    
+                    <ul>
+                        <li><strong>Access:</strong> You can request access to the personal information we hold about you.</li>
+                        <li><strong>Correction:</strong> You can request correction of inaccurate or incomplete personal information.</li>
+                        <li><strong>Deletion:</strong> You can request deletion of your personal information in certain circumstances.</li>
+                        <li><strong>Restriction:</strong> You can request restriction of processing of your personal information.</li>
+                        <li><strong>Portability:</strong> You can request transfer of your personal information to another organization.</li>
+                        <li><strong>Objection:</strong> You can object to processing of your personal information in certain cases.</li>
+                    </ul>
+                    
+                    <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Cookies and Tracking Technologies</h3>
+                    <p>We use cookies and similar tracking technologies to track activity on our platform and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.</p>
+                    
+                    <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our platform.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>International Data Transfers</h3>
+                    <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+                    
+                    <p>We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Children's Privacy</h3>
+                    <p>Our platform is not intended for individuals under the age of 16. We do not knowingly collect personal information from children under 16. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Changes to This Privacy Policy</h3>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+                    
+                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>Contact Us</h3>
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p>privacy@agenticai.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>123 AI Boulevard<br>Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AgenticAI</h3>
+                    <p>Leading the revolution in autonomous AI systems education and development.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@agenticai.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 AI Boulevard, Tech City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AgenticAI Learning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Set active navigation link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        
+    </script>
+
+    <!-- Add this to the end of your privacy-policy.html -->
+<div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(108, 99, 255, 0.1); border-radius: 10px;">
+    <h3>Privacy Policy Acceptance</h3>
+    <p>By clicking "Accept", you agree to our Privacy Policy and Terms of Service</p>
+    <button onclick="acceptPrivacyPolicy()" style="
+        background: linear-gradient(90deg, #6c63ff, #8a82ff);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin: 10px;
+    ">Accept & Continue to Website</button>
+    <br>
+    <a href="terms-of-service.html" style="color: #6c63ff; text-decoration: none;">Review Terms of Service</a>
+</div>
+
+<script>
+function acceptPrivacyPolicy() {
+    localStorage.setItem('privacyAccepted', 'true');
+    window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

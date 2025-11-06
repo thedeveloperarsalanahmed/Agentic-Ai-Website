@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Agentic AI Learning Platform</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #e0e0ff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #e0e0ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6c63ff;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: #6c63ff;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0d0d26 100%);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(108, 99, 255, 0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #6c63ff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #b8b8ff;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #e0e0ff;
+        }
+        
+        .section-title span {
+            color: #6c63ff;
+        }
+        
+        .terms-content {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 10px;
+            padding: 2.5rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .terms-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #6c63ff;
+        }
+        
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: #b8b8ff;
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-section ul li, .terms-section ol li {
+            margin-bottom: 0.5rem;
+            color: #b8b8ff;
+        }
+        
+        .terms-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .terms-section table th,
+        .terms-section table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .terms-section table th {
+            background: rgba(108, 99, 255, 0.1);
+            color: #e0e0ff;
+            font-weight: 600;
+        }
+        
+        .terms-section table td {
+            color: #b8b8ff;
+        }
+        
+        .highlight-box {
+            background: rgba(108, 99, 255, 0.1);
+            border-left: 4px solid #6c63ff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .contact-item h4 {
+            color: #6c63ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+            color: #b8b8ff;
+        }
+        
+        .definition-list {
+            margin: 1.5rem 0;
+        }
+        
+        .definition-term {
+            font-weight: 600;
+            color: #e0e0ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-description {
+            margin-bottom: 1rem;
+            color: #b8b8ff;
+            padding-left: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d0d26;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: #6c63ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b8b8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+            color: #8a82ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 99, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+            color: #6c63ff;
+            font-size: 1.5rem;
+            display: none;
+        }
+        
+        .back-to-top:hover {
+            background: rgba(108, 99, 255, 0.4);
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .toc h3 {
+            color: #6c63ff;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc ul li a {
+            color: #b8b8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .toc ul li a:hover {
+            color: #6c63ff;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem 0.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .terms-content {
+                padding: 1.5rem;
+            }
+            
+            .terms-section table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">AgenticAI</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="Privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="active">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Terms of Service</h1>
+                <p>Last updated: October 15, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Content -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Terms & <span>Conditions</span></h2>
+            
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#agreement">1. Agreement to Terms</a></li>
+                    <li><a href="#accounts">2. User Accounts</a></li>
+                    <li><a href="#access">3. Access and Use</a></li>
+                    <li><a href="#payments">4. Payments and Subscriptions</a></li>
+                    <li><a href="#content">5. User Content</a></li>
+                    <li><a href="#intellectual">6. Intellectual Property</a></li>
+                    <li><a href="#prohibited">7. Prohibited Activities</a></li>
+                    <li><a href="#termination">8. Termination</a></li>
+                    <li><a href="#disclaimer">9. Disclaimer of Warranties</a></li>
+                    <li><a href="#limitation">10. Limitation of Liability</a></li>
+                    <li><a href="#indemnification">11. Indemnification</a></li>
+                    <li><a href="#disputes">12. Dispute Resolution</a></li>
+                    <li><a href="#changes">13. Changes to Terms</a></li>
+                    <li><a href="#contact">14. Contact Information</a></li>
+                </ul>
+            </div>
+            
+            <div class="terms-content">
+                <div class="terms-section" id="agreement">
+                    <h3>1. Agreement to Terms</h3>
+                    <p>By accessing or using the AgenticAI Learning Platform ("Platform"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this Platform.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> These terms contain a mandatory arbitration provision that requires the use of arbitration on an individual basis to resolve disputes, rather than jury trials or class actions.</p>
+                    </div>
+                    
+                    <p>These Terms of Service apply to all visitors, users, and others who access or use the Platform. Additional terms may apply to specific services or features, which will be presented to you when you access those services.</p>
+                </div>
+
+                <div class="terms-section" id="accounts">
+                    <h3>2. User Accounts</h3>
+                    <p>To access certain features of the Platform, you may be required to register for an account. When you create an account, you agree to:</p>
+                    
+                    <ul>
+                        <li>Provide accurate, current, and complete information during the registration process</li>
+                        <li>Maintain and promptly update your account information</li>
+                        <li>Maintain the security of your password and accept all risks of unauthorized access</li>
+                        <li>Notify us immediately of any unauthorized use of your account</li>
+                        <li>Take responsibility for all activities that occur under your account</li>
+                    </ul>
+                    
+                    <p>You must be at least 16 years old to create an account on our Platform. If you are under 16, you may only use the Platform with the consent and supervision of a parent or legal guardian.</p>
+                </div>
+
+                <div class="terms-section" id="access">
+                    <h3>3. Access and Use</h3>
+                    <p>Subject to your compliance with these Terms, AgenticAI grants you a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Platform for your personal, non-commercial educational purposes.</p>
+                    
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>Use the Platform in any manner that could disable, overburden, damage, or impair the Platform</li>
+                        <li>Use any robot, spider, or other automatic device, process, or means to access the Platform</li>
+                        <li>Introduce any viruses, Trojan horses, worms, logic bombs, or other harmful material</li>
+                        <li>Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Platform</li>
+                        <li>Otherwise attempt to interfere with the proper working of the Platform</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section" id="payments">
+                    <h3>4. Payments and Subscriptions</h3>
+                    <p>Certain features of the Platform may require payment of fees. You agree to pay all applicable fees as described on the Platform when you sign up for premium services.</p>
+                    
+                    <h4>Subscription Terms</h4>
+                    <ul>
+                        <li><strong>Billing Cycle:</strong> Subscription fees will be billed at the beginning of your subscription and on each renewal date</li>
+                        <li><strong>Auto-Renewal:</strong> Your subscription will automatically renew at the end of each billing cycle unless you cancel</li>
+                        <li><strong>Cancellation:</strong> You may cancel your subscription at any time, but you will not receive a refund for any partial billing period</li>
+                        <li><strong>Price Changes:</strong> We may change subscription fees at any time with 30 days' notice</li>
+                    </ul>
+                    
+                    <h4>Refund Policy</h4>
+                    <p>We offer a 14-day money-back guarantee for new subscriptions. Refund requests must be submitted within 14 days of your initial purchase. After 14 days, no refunds will be provided.</p>
+                </div>
+
+                <div class="terms-section" id="content">
+                    <h3>5. User Content</h3>
+                    <p>"User Content" means any and all information and content that a user submits to or creates using the Platform. You are solely responsible for your User Content.</p>
+                    
+                    <p>By submitting User Content, you represent and warrant that:</p>
+                    <ul>
+                        <li>You own or have the necessary rights to submit the User Content</li>
+                        <li>The User Content does not violate any applicable laws or regulations</li>
+                        <li>The User Content does not infringe any third-party rights</li>
+                    </ul>
+                    
+                    <p>You retain ownership of your User Content, but you grant AgenticAI a worldwide, perpetual, irrevocable, royalty-free license to use, modify, publicly perform, publicly display, reproduce, and distribute such User Content on and through the Platform.</p>
+                </div>
+
+                <div class="terms-section" id="intellectual">
+                    <h3>6. Intellectual Property</h3>
+                    <p>The Platform and its original content, features, and functionality are owned by AgenticAI and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                    
+                    <div class="definition-list">
+                        <div class="definition-term">Platform Content</div>
+                        <div class="definition-description">All educational materials, course content, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof, are proprietary to us or our licensors.</div>
+                        
+                        <div class="definition-term">Trademarks</div>
+                        <div class="definition-description">The AgenticAI name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of AgenticAI or its affiliates or licensors.</div>
+                        
+                        <div class="definition-term">Limited License</div>
+                        <div class="definition-description">We grant you a limited license to access and make personal use of the Platform content for educational purposes only.</div>
+                    </div>
+                    
+                    <p>You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Platform, except as follows:</p>
+                    <ul>
+                        <li>Your computer may temporarily store copies of such materials in RAM incidental to your accessing and viewing those materials</li>
+                        <li>You may store files that are automatically cached by your Web browser for display enhancement purposes</li>
+                        <li>You may print or download one copy of a reasonable number of pages of the Platform for your own personal, non-commercial use</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section" id="prohibited">
+                    <h3>7. Prohibited Activities</h3>
+                    <p>You may use the Platform only for lawful purposes and in accordance with these Terms. You agree not to use the Platform:</p>
+                    
+                    <ul>
+                        <li>In any way that violates any applicable federal, state, local, or international law or regulation</li>
+                        <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent</li>
+                        <li>To impersonate or attempt to impersonate AgenticAI, an AgenticAI employee, another user, or any other person or entity</li>
+                        <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Platform</li>
+                        <li>To attempt to interfere with the proper working of the Platform</li>
+                    </ul>
+                    
+                    <p>Additionally, you agree not to:</p>
+                    <ul>
+                        <li>Use the Platform in any manner that could disable, overburden, damage, or impair the site</li>
+                        <li>Use any device, software, or routine that interferes with the proper working of the Platform</li>
+                        <li>Otherwise attempt to interfere with the proper working of the Platform</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section" id="termination">
+                    <h3>8. Termination</h3>
+                    <p>We may terminate or suspend your account and bar access to the Platform immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                    
+                    <p>If you wish to terminate your account, you may simply discontinue using the Platform or delete your account through your account settings.</p>
+                    
+                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+                </div>
+
+                <div class="terms-section" id="disclaimer">
+                    <h3>9. Disclaimer of Warranties</h3>
+                    <p>YOUR USE OF THE PLATFORM IS AT YOUR SOLE RISK. THE PLATFORM IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. AGENTICAI EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                    
+                    <p>AgenticAI makes no warranty that:</p>
+                    <ul>
+                        <li>The Platform will meet your requirements</li>
+                        <li>The Platform will be uninterrupted, timely, secure, or error-free</li>
+                        <li>The results that may be obtained from the use of the Platform will be accurate or reliable</li>
+                        <li>The quality of any products, services, information, or other material purchased or obtained by you through the Platform will meet your expectations</li>
+                        <li>Any errors in the Platform will be corrected</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section" id="limitation">
+                    <h3>10. Limitation of Liability</h3>
+                    <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL AGENTICAI, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
+                    
+                    <ul>
+                        <li>Your access to or use of or inability to access or use the Platform</li>
+                        <li>Any conduct or content of any third party on the Platform</li>
+                        <li>Any content obtained from the Platform</li>
+                        <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                    </ul>
+                    
+                    <p>IN NO EVENT SHALL AGENTICAI'S TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION EXCEED THE AMOUNT YOU HAVE PAID AGENTICAI IN THE LAST SIX (6) MONTHS, OR, IF GREATER, ONE HUNDRED DOLLARS (USD $100).</p>
+                </div>
+
+                <div class="terms-section" id="indemnification">
+                    <h3>11. Indemnification</h3>
+                    <p>You agree to defend, indemnify, and hold harmless AgenticAI and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:</p>
+                    
+                    <ul>
+                        <li>Your use and access of the Platform</li>
+                        <li>A breach of these Terms</li>
+                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
+                    </ul>
+                    
+                    <p>This defense and indemnification obligation will survive these Terms and your use of the Platform.</p>
+                </div>
+
+                <div class="terms-section" id="disputes">
+                    <h3>12. Dispute Resolution</h3>
+                    <h4>Mandatory Arbitration</h4>
+                    <p>Any dispute, claim or controversy arising out of or relating to these Terms or the breach, termination, enforcement, interpretation or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by arbitration in San Francisco, California before one arbitrator.</p>
+                    
+                    <h4>Class Action Waiver</h4>
+                    <p>YOU AND AGENTICAI AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</p>
+                    
+                    <h4>Governing Law</h4>
+                    <p>These Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions.</p>
+                </div>
+
+                <div class="terms-section" id="changes">
+                    <h3>13. Changes to Terms</h3>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                    
+                    <p>By continuing to access or use our Platform after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Platform.</p>
+                </div>
+
+                <div class="terms-section" id="contact">
+                    <h3>14. Contact Information</h3>
+                    <p>If you have any questions about these Terms, please contact us:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p>legal@agenticai.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>123 AI Boulevard<br>Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AgenticAI</h3>
+                    <p>Leading the revolution in autonomous AI systems education and development.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@agenticai.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 AI Boulevard, Tech City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AgenticAI Learning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Set active navigation link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Smooth scrolling for table of contents links
+            const tocLinks = document.querySelectorAll('.toc a');
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
